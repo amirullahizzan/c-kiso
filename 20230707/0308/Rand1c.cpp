@@ -10,11 +10,15 @@ int Dice()
     return rand() % 6 + 1;
 }
 
+void InitRand()
+{
+    srand((unsigned int)time(NULL));
+}
+
 
 int main()
 {
-    srand((unsigned int)time(NULL));
-
+    InitRand();
     for (int i = 0; i < 20; i++)
     {
         cout << Dice() + Dice() << ' ';
