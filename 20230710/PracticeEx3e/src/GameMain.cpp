@@ -1,5 +1,11 @@
 #include "WinMain.h"
+#include <iostream>
 #include <cmath>
+#include <limits>
+#include <minwindef.h>
+
+
+using namespace std;
 
 int circle_x[10];
 int circle_y[10];
@@ -7,19 +13,21 @@ int circle_rad[10];
 
 
 int middle_distance[10];
-int dx;
-int dy;
+double dx;
+double dy;
 
 int line_x;
 int line_y;
 
+int mid_x = WINDOW_W / 2;
+int mid_y = WINDOW_H / 2;
+
 void GameInit()
 {
 	InitCircle();
-
-
 }
 
+int closest_dist = INT_MAX;
 
 
 void GameUpdate()
@@ -27,10 +35,13 @@ void GameUpdate()
 
 	if (IsKeyOn(KEY_INPUT_SPACE))
 	{
+		closest_dist = INT_MAX;
+
 		for (int i = 0; i < 10; i++)
 		{
+		
 			//Count MinMax Random
-			circle_rad[i] = GetRand(35 - 15) + 15;
+			/*circle_rad[i] = GetRand(35 - 15) + 15;*/
 			circle_x[i] = GetRand(WINDOW_W - circle_rad[i]);
 			circle_y[i] = GetRand(WINDOW_H - circle_rad[i]);
 
@@ -41,30 +52,22 @@ void GameUpdate()
 				continue;
 			}
 
-			if (circle_y[i] < (0 + circle_rad[i]))
+			/*if (circle_y[i] < (0 + circle_rad[i]))
 			{
 				circle_y[i] = GetRand(WINDOW_H - circle_rad[i]);
 				i--;
 				continue;
-			}
+			}*/
+
+			
 
 		}
+
 	}
 	
 
-	for (int i = 0; i < 10; i++)
-	{
-		//somethig wrong
-		dx = circle_x[i] - WINDOW_W / 2;
-		dy = circle_y[i] - WINDOW_H / 2;
-		middle_distance[i] = sqrt((dx * dx) + (dy * dy));
-		if ((middle_distance[i] < middle_distance[i - 1]))
-		{
-			line_x = circle_x[i];
-			line_y = circle_y[i];
-		}
 
-	}
+	
 	
 }
 
@@ -75,13 +78,29 @@ void GameDraw()
 	MiddleCircle();
 	DrawRandomCircles();
 
-	
-	
-	DrawLine(WINDOW_W / 2, WINDOW_H / 2, line_x, line_y, RED, 1);
 
+	for (int i = 0; i <10 ;i++)
+	{
+		dx = abs(mid_x - circle_x[i]);
+		dy = abs(mid_y - circle_y[i]);
+
+		middle_distance[i] = static_cast<int>(sqrt(pow(dx, 2) + pow(dy, 2)));
+
+		if (closest_dist > middle_distance[i])
+		{
+			closest_dist = middle_distance[i];
+			line_x = circle_x[i];
+			line_y = circle_y[i];
+			
+
+		}
+	}
+	
+	DrawLine(mid_x, mid_y, line_x, line_y, RED, 1);
 
 
 }
+
 
 
 void GameExit()
@@ -92,7 +111,7 @@ void GameExit()
 
 void MiddleCircle()
 {
-	DrawCircle(WINDOW_W / 2, WINDOW_H / 2, 25, PINK, 1, 1);
+	DrawCircle(mid_x, mid_y, 25, PINK, 1, 1);
 }
 
 void InitCircle()
@@ -101,8 +120,8 @@ void InitCircle()
 	{
 		//Count MinMax Random
 		circle_rad[i] = GetRand(35 - 15) + 15;
-		circle_x[i] = GetRand(WINDOW_W - circle_rad[i]);
-		circle_y[i] = GetRand(WINDOW_H - circle_rad[i]);
+		circle_x[i] = GetRand(WINDOW_W/2 - circle_rad[i]);
+		circle_y[i] = GetRand(WINDOW_H/2 - circle_rad[i]);
 
 		if (circle_x[i] < (0 + circle_rad[i]))
 		{
@@ -118,7 +137,9 @@ void InitCircle()
 			continue;
 		}
 
+
 	}
+
 
 
 

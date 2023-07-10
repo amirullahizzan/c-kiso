@@ -1,8 +1,16 @@
 #include "WinMain.h"
 #include <ctime>
 
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+
+	if (AllocConsole()) {
+		FILE* fp;
+		freopen_s(&fp, "CONOUT$", "w", stdout);
+		SetConsoleTitle("Debug Console");
+	}
+
 	SetOutApplicationLogValidFlag(FALSE);
 	ChangeWindowMode(TRUE);
 	SetWindowSize(WINDOW_W, WINDOW_H);
