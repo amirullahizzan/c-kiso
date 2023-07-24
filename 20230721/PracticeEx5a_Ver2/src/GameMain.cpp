@@ -11,6 +11,10 @@ int chara_ghandles[9];
 int player_x;
 int player_y;
 
+int player_w;
+int player_h;
+
+
 
 int map[MAP_H][MAP_W] =
 {
@@ -34,24 +38,39 @@ int map[MAP_H][MAP_W] =
 
 int map1[MAP_H][MAP_W] =
 {
-	{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
-	{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
-	{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
+	{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
+	{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
+	{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
 	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,},
 	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,},
-	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,},
-	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,},
+	{0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,},
+	{0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,},
 	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,},
 	{5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,},
-	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,},
+	{0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,},
 	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,},
 	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,},
 	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,},
-	{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
-	{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
-	{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
+	{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
+	{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
+	{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
 };
+int map_data = 0;
 
+int map_now[MAP_H][MAP_W];
+
+void GenerateMap(const int this_map[MAP_H][MAP_W])
+{
+	for (int h = 0; h < MAP_H; h++)
+	{
+		for (int w = 0; w < MAP_W; w++)
+		{
+			map_now[h][w] = this_map[h][w];
+			map_data = this_map[h][w];
+			DrawGraph(IMG_SIZE * w, IMG_SIZE * h, map_ghandles[map_data], FALSE);
+		}
+	}
+}
 //int speed;
 int player_facing_int;
 int player_anim_int = 1;
@@ -63,8 +82,11 @@ void GameInit()
 	char map_filename[64];
 	char chara_filename[64];
 
-	player_x = 32*1;
-	player_y = 32*8;
+	player_x = 0;
+	player_y = 0;
+
+	player_w = 2;
+	player_h = 8;
 
 	player_facing_int = 2;
 //	speed = 0;
@@ -81,7 +103,6 @@ void GameInit()
 		"pipo-charachip009b.png", "pipo-charachip010b.png", "pipo-charachip011b.png",
 		"pipo-charachip018d.png", "pipo-charachip019a.png", "pipo-charachip019b.png",
 		"pipo-charachip021e.png", "pipo-charachip022d.png", "pipo-charachip025c.png"
-
 	};
 
 	for (int i = 0; i < 9; i++)
@@ -92,7 +113,6 @@ void GameInit()
 	
 
 }
-
 
 
 int movementframe_ms = 0;
@@ -117,6 +137,18 @@ void MovementAnimHandler()
 		player_anim_int = 1;
 		movementframe_ms = 0;
 	}
+}
+
+
+enum Path{Grass = 0, Sand = 5};
+
+bool IsNotWall(int h_facing, int w_facing)
+{
+	Path path1;
+	Path path2;
+	path1 = Grass;
+	path2 = Sand;
+	return map_now[player_h + h_facing][player_w + w_facing] == Grass || map_now[player_h + h_facing][player_w + w_facing] == Sand ;
 }
 
 bool bDisplayGrid = false;
@@ -146,31 +178,31 @@ void PlayerControl()
 		bDisplayGrid = !bDisplayGrid;
 	}
 	
-	if (IsKeyOn(KEY_INPUT_RIGHT) && player_x < WINDOW_W-32)
+	if (IsKeyOn(KEY_INPUT_RIGHT) && player_w < MAP_W-1 && IsNotWall(0,1))
 	{
 		player_facing_int = 2;
 		MovementAnimHandler();
-		player_x +=IMG_SIZE;
+		player_w++;
 
 	}
-	if (IsKeyOn(KEY_INPUT_LEFT) && player_x > 0)
+	if (IsKeyOn(KEY_INPUT_LEFT) && player_w > 0 && IsNotWall(0,-1))
 	{
 		player_facing_int = 1;
 		MovementAnimHandler();
-		player_x -= IMG_SIZE;
+		player_w--;
 
 	}
-	if (IsKeyOn(KEY_INPUT_UP) && player_y > 0)
+	if (IsKeyOn(KEY_INPUT_UP) && player_h > 0 && IsNotWall(-1, 0))
 	{
 		player_facing_int = 3;
 		MovementAnimHandler();
-		player_y -= IMG_SIZE;
+		player_h--;
 	}
-	if (IsKeyOn(KEY_INPUT_DOWN) && player_y < WINDOW_H - 32)
+	if (IsKeyOn(KEY_INPUT_DOWN) && player_h < MAP_H - 1 && IsNotWall(1, 0))
 	{
 		player_facing_int = 0;
 		MovementAnimHandler();
-		player_y += IMG_SIZE;
+		player_h++;
 
 	}
 }
@@ -185,7 +217,6 @@ void GameUpdate()
 //LoadDivGraph -> Load one image and automatically divide it into graphs. (In contrast to LoadGraph and DrawRectGraph)
 //SCR : the coordinatepos inside the image file.
 //Weight,Height : the size of the image
-int map_data = 0;
 void GameDraw()
 {
 	//f1 dsiplay grid
@@ -194,27 +225,18 @@ void GameDraw()
 
 	if (map_number == 0)
 	{
-		for (int h = 0; h < MAP_H; h++)
-		{
-			for (int w = 0; w < MAP_W; w++)
-			{
-				 map_data = map[h][w];
-				DrawGraph(IMG_SIZE * w, IMG_SIZE * h, map_ghandles[map_data], FALSE);
-			}
-		}
+		
+		GenerateMap(map);
+
 	}
 
 	if (map_number == 1)
 	{
-		for (int h = 0; h < MAP_H; h++)
-		{
-			for (int w = 0; w < MAP_W; w++)
-			{
-				 map_data = map1[h][w];
-				DrawGraph(IMG_SIZE * w, IMG_SIZE * h, map_ghandles[map_data], FALSE);
-			}
-		}
+		GenerateMap(map1);
+
 	}
+
+
 	
 		
 		
@@ -229,7 +251,9 @@ void GameDraw()
 				DrawLine(0, IMG_SIZE * h, WINDOW_W, IMG_SIZE * h, RED, 1);
 			}
 		}
-	
+
+		player_x = player_w * IMG_SIZE;
+		player_y = player_h * IMG_SIZE;
 	
 	DrawRectGraph(player_x, player_y, IMG_SIZE *player_anim_int, IMG_SIZE *player_facing_int, IMG_SIZE, IMG_SIZE, chara_ghandles[0], 1);
 
