@@ -1,41 +1,53 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-struct Enemy
-{
-	int health = 0;
-	int damage = 0;
 
+
+class Enemy
+{
+public :
+	Enemy(int health, int damage) : health_(health), damage_(damage) {}
+	int health_ = 0;
+	int damage_ = 0;
+
+private :
+	
 
 };
-
+const int MAXENEMY = 4+1;
 char input[64];
 int numinput;
-Enemy* enemies[4];
+
+std::vector<Enemy> enemies;
 
 void PrintEnemy()
 {
-	for (int i = 0; i < sizeof(enemies) / sizeof(enemies[0]); i++) 
+	for (size_t i = 1; i < enemies.size(); i++) 
 	{
-		std::cout << "Enemy " << i + 1 << " health: " << enemies[i]->health << std::endl;
-		//std::cout << "Enemy " << i << " attack: " << enemies[i]->damage << std::endl;
+		std::cout << "Enemy " << i << " health: " << enemies[i].health_ << std::endl;
+		std::cout << "Enemy " << i << " attack: " << enemies[i].damage_ << std::endl;
+		std::cout << std::endl;
 	}
 }
-int maxenemies = 0;
 
 void PlayerTurnIO()
 {
+	while (true)
+	{
 	PrintEnemy();
-	cout << "command : attack | exitgame" << endl;
+	cout << "command : attack | exitgame > " << flush;
 	cin >> input;
 	if (strcmp(input, "attack") == 0)
 	{
-		cout << "enemy number : " << endl;
+		cout << "enemy number > " << flush;
 		cin >> numinput;
-		if (numinput > 0 && numinput < maxenemies)
+		if (numinput > 0 && numinput < enemies.size())
 		{
-			enemies[numinput-1]->health -= 20;
+			enemies[numinput].health_ -= 20;
+			PrintEnemy();
+			break;
 		}
 		else
 		{
@@ -47,41 +59,54 @@ void PlayerTurnIO()
 		std::cout << "Exiting realm" << std::endl;
 		exit(0);
 	}
+	}
+
+}
+
+void EnemyTurnIO()
+{
+	int waittime = 0;
+	while (waittime <= 180)
+	{
+	waittime++;
+	switch (waittime) 
+	{
+	case 0 :
+		std::cout << "Enemies turn";
+		break;
+	case 60 :
+		std::cout << ".";
+		break;
+	case 120 :
+		std::cout << ".";
+		break;
+	case 180 :
+		std::cout << "." << endl;
+		break;
+	default:
+		break;
+	}
+	}
+
 }
 
 bool inBattle = true;
-
 int main()
 {
-	maxenemies = sizeof(enemies) / sizeof(enemies[0]);
-	for (int i = 0; i < sizeof(enemies) / sizeof(enemies[0]); i++)
+	for (size_t i = 1; i <= MAXENEMY; i++)
 	{
-		enemies[i] = new Enemy();
-		enemies[i]->health = 100;
-		enemies[i]->damage = 20;
+		enemies.push_back( Enemy(100,40) );
 	}
 
 	// Allocate memory for the Enemy struct.
 	while (inBattle)
 	{
-		
-
 		PlayerTurnIO();
-		
+		EnemyTurnIO();
 	}
 	
 
 	// Print the health and attack of the Enemy struct.
-		
-
-	
-
-
-	// Delete the Enemy struct.
-	for (int i = 0; i < 5; i++)
-	{
-		delete enemies[i];
-	}
 
 	system("pause");
 	return 0;
