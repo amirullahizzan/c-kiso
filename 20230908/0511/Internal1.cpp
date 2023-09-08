@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+static int a = 2; 
+//using static will prevent the other third party from accessing or extern
+
+static void Func1()
+{
+	cout << "a(1) = " << a << endl;
+}
+
+void Func2()
+{
+	Func1();
+}
+
