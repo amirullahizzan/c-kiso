@@ -14,9 +14,9 @@
 // =====================================================
 //	定数
 // =====================================================
-const float GROUND_Y	  = (float)WINDOW_H - 60;	// 地面の座標
+const float GROUND_Y = (float)WINDOW_H - 60;	// 地面の座標
 const int	ENEMY_MAX_NUM = 10;						// 敵の数
-const int	ENEMY_SPEED	  = 1;						// 敵の移動速度
+const int	ENEMY_SPEED = 1;						// 敵の移動速度
 
 // =====================================================
 //	列挙体
@@ -44,14 +44,17 @@ static Box enemy[ENEMY_MAX_NUM];
 //static float		player_h	 = 0;	// 高さ
 //static unsigned int player_color = 0;	// 色
 // ジャンプ処理用
-static int	 player_jump_state	= JUMP_STATE::NONE;	 // 状態
-static float player_jump_power  = 0;				 // ジャンプ力
-const static float PLAYER_JUMP_POWER_STEP1  = 20.0f;				 // ジャンプ力
-const static float PLAYER_JUMP_POWER_STEP2  = 25.0f;				 // ジャンプ力
+static int	 player_jump_state = JUMP_STATE::NONE;	 // 状態
+static float player_jump_power = 0;				 // ジャンプ力
+const static float PLAYER_JUMP_POWER_STEP1 = 20.0f;				 // ジャンプ力
+const static float PLAYER_JUMP_POWER_STEP2 = 25.0f;				 // ジャンプ力
 // ダメージ処理用
 //	ダメージ中は点滅をする
-static int player_damage_frame = 0;	// ダメージ時間
-const static int PLAYER_DAMAGE_FRAME_MAX = 60;	// ダメージ時間
+int player_damage_frame = 0;	// ダメージ時間
+const  int PLAYER_DAMAGE_FRAME_MAX = 60;	// ダメージ時間
+static bool isImmune = false;
+
+int playerhp = 100;
 
 // -----------------------------------------------------
 //	敵用変数
@@ -72,10 +75,10 @@ void GameInit()
 {
 	// プレイヤー
 	{
-		player.w	 = 60;
-		player.h	 = 60;
-		player.x	 = 120;
-		player.y	 = GROUND_Y - player.h / 2;
+		player.w = 60;
+		player.h = 60;
+		player.x = 120;
+		player.y = GROUND_Y - player.h / 2;
 		player.color = BLUE;
 	}
 	// 敵
@@ -91,7 +94,8 @@ void GameInit()
 			enemy[i].x = WINDOW_W + enemy[i].w / 2;		// 画面右端外に置く（右から左に移動するため）
 			enemy[i].y = GROUND_Y - enemy[i].h / 2;
 			// 待機時間の設定
-			enemy_wait_frame[i] = (i + 1) * 60;
+
+			enemy_wait_frame[i] = (i + 1) * 160;
 		}
 	}
 
@@ -99,6 +103,8 @@ void GameInit()
 // =====================================================
 //		更新
 // =====================================================
+int currentenemyIndex = 0;
+int nextEnemy = 0;
 void GameUpdate()
 {
 	
@@ -144,7 +150,7 @@ void GameUpdate()
 		if (IsKeyOn(KEY_INPUT_A))
 		{
 			// ダメージ開始
-			void SetPlayerFrameMax();
+			SetPlayerFrameMax();
 		}
 		// ダメージ中処理
 		if (player_damage_frame > 0)
@@ -157,6 +163,21 @@ void GameUpdate()
 			player_damage_frame = 0;
 		}
 		// ------------------------------------------
+
+		for (int i = 0;i < ENEMY_MAX_NUM; i++)
+		{
+		if (CheckHitBox(player,enemy[i]) && isImmune == false)
+		{
+			SetPlayerFrameMax();
+			playerhp -= 10;
+			isImmune = true;
+		}
+		}
+
+		if (player_damage_frame <= 0)
+		{
+			isImmune = false;
+		}
 	}
 
 	// 敵
@@ -165,16 +186,16 @@ void GameUpdate()
 		{
 			if (enemy_wait_frame[i] <= 0)
 			{
+				enemy[i].x -= ENEMY_SPEED;
 				// 移動中
 				enemy_wait_frame[i] = 0;
-				enemy[i].x -= ENEMY_SPEED;
-				if (enemy[i].x < 0 - enemy[i].w / 2)
+				if (enemy[i].x < 0 - enemy[i].w / 2 && enemy_wait_frame[ENEMY_MAX_NUM-1] == 0)
 				{
 					// 座標と待機時間の再設定
 					enemy[i].h			= (float)(50 + GetRand(5) * 10);
 					enemy[i].x			= WINDOW_W + enemy[i].w / 2;
 					enemy[i].y			= GROUND_Y - enemy[i].h / 2;
-					enemy_wait_frame[i] = (i + 1) * 60;
+					enemy_wait_frame[i] = (i + 1) * 160;
 				}
 			}
 			else
@@ -189,8 +210,23 @@ void GameUpdate()
 // =====================================================
 //		描画
 // =====================================================
+
 void GameDraw()
 {
+	printfDx("player jump power : %f\n", player_jump_power);
+	printfDx("player jump : %d\n", player_jump_state);
+	printfDx("player hp : %d\n", playerhp);
+	printfDx("currentenemy : %d\n", enemy_wait_frame[0]);
+	printfDx("currentenemy : %d\n", enemy_wait_frame[1]);
+	printfDx("currentenemy : %d\n", enemy_wait_frame[2]);
+	printfDx("currentenemy : %d\n", enemy_wait_frame[3]);
+	printfDx("currentenemy : %d\n", enemy_wait_frame[4]);
+	printfDx("currentenemy : %d\n", enemy_wait_frame[5]);
+	printfDx("currentenemy : %d\n", enemy_wait_frame[6]);
+	printfDx("currentenemy : %d\n", enemy_wait_frame[7]);
+	printfDx("currentenemy : %d\n", enemy_wait_frame[8]);
+	printfDx("currentenemy : %d\n", enemy_wait_frame[9]);
+
 	// 背景
 	{
 		DrawBoxAA(0, GROUND_Y, WINDOW_W, WINDOW_H, BLACK, TRUE);
@@ -205,9 +241,7 @@ void GameDraw()
 			// プレイヤーを描画する
 			drawBox(player);
 		}
-		printfDx("player jump power : %f\n", player_jump_power);
-		printfDx("player jump : %d\n", player_jump_state);
-
+		
 	}
 
 	// 敵
@@ -236,3 +270,17 @@ void GameExit()
 
 }
 
+int EnemyWaitReroll(int i)
+{
+	int wait_frame_rand = GetRand(1);
+	switch (wait_frame_rand)
+	{
+	case 0:
+		return enemy_wait_frame[i] = 160;
+		break;
+	case 1:
+		return enemy_wait_frame[i] = 180;
+		break;
+	}
+
+}

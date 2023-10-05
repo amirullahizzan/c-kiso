@@ -17,3 +17,4 @@ void SetPlayerFrameMax()
 {
 	player_damage_frame = PLAYER_DAMAGE_FRAME_MAX;
 }
+
