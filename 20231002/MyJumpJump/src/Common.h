@@ -15,7 +15,9 @@ public:
 };
 
 extern int player_damage_frame;
-extern int PLAYER_DAMAGE_FRAME_MAX;
+extern const int PLAYER_DAMAGE_FRAME_MAX;	// É_ÉÅÅ[ÉWéûä‘
+extern bool isImmune;
+
 // =====================================================
 //	ä÷êî
 // =====================================================
@@ -23,3 +25,5 @@ extern int PLAYER_DAMAGE_FRAME_MAX;
 void drawBox(const Box& box);
 
 void SetPlayerFrameMax();
+int EnemyWaitReroll(int i);
+
