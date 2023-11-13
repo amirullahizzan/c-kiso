@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Ex07_01a">
+      <UniqueIdentifier>{817bb5d1-36c7-4feb-a3e4-c1956950ce86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ex07_01b">
+      <UniqueIdentifier>{927a640c-1cea-4d86-8fe9-63e63606a8f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ex07_01a\Class">
+      <UniqueIdentifier>{3fbc15ca-8427-4a56-a5d4-f3d754aa377b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ex07_01b\Class">
+      <UniqueIdentifier>{9159913c-8781-4110-857d-eed5c1c2c39a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Custom">
+      <UniqueIdentifier>{d2211393-2850-4b79-b348-f25b368da9cc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Student.h">
+      <Filter>Ex07_01a\Class</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Teacher.h">
+      <Filter>Ex07_01a\Class</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Circle.h">
+      <Filter>Ex07_01b\Class</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Square.h">
+      <Filter>Ex07_01b\Class</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Object.h">
+      <Filter>Custom</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Person.h">
+      <Filter>Custom</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Ex07_01a.cpp">
+      <Filter>Ex07_01a</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ex07_01b.cpp">
+      <Filter>Ex07_01b</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Student.cpp">
+      <Filter>Ex07_01a\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Teacher.cpp">
+      <Filter>Ex07_01a\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Circle.cpp">
+      <Filter>Ex07_01b\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Square.cpp">
+      <Filter>Ex07_01b\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object.cpp">
+      <Filter>Custom</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Person.cpp">
+      <Filter>Custom</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
