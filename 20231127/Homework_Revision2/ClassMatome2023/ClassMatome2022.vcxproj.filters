@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Q1">
+      <UniqueIdentifier>{46253f96-0ccf-4047-8d25-6fe32fc5a7c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Q2">
+      <UniqueIdentifier>{2a03700e-87c7-4eff-b5d1-b4a10183c138}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Q4">
+      <UniqueIdentifier>{cec2c9a4-a2e7-4559-8840-326633ac34ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Q5">
+      <UniqueIdentifier>{9d175556-3fd5-4b10-8b3d-6f41ad1e0a40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Q6">
+      <UniqueIdentifier>{198f810c-827d-4aaa-8160-331f860b22ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Q7">
+      <UniqueIdentifier>{0a9276d8-add6-483f-8a85-4d5af95f093f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Q8">
+      <UniqueIdentifier>{90f81712-2e76-4a37-873c-147b4c78aa62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Q9">
+      <UniqueIdentifier>{2e6fe4a3-2581-4f5e-950d-e6e0e8e99395}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Q10">
+      <UniqueIdentifier>{e996cf84-763d-4974-b0cc-b035551f27b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Q3">
+      <UniqueIdentifier>{792e4093-d1d3-4b26-b830-c8352cf88314}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Q1\IchimatsuMark.cpp">
+      <Filter>Q1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q1\Matome1.cpp">
+      <Filter>Q1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q2\Matome2.cpp">
+      <Filter>Q2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q2\Num.cpp">
+      <Filter>Q2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q4\Character.cpp">
+      <Filter>Q4</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q4\Matome4.cpp">
+      <Filter>Q4</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q5\Matome5.cpp">
+      <Filter>Q5</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q5\Rand2Num.cpp">
+      <Filter>Q5</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q6\BaseNum.cpp">
+      <Filter>Q6</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q6\InputNum.cpp">
+      <Filter>Q6</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q6\Matome6.cpp">
+      <Filter>Q6</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q6\RandomNum.cpp">
+      <Filter>Q6</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q7\Base.cpp">
+      <Filter>Q7</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q7\Enemy.cpp">
+      <Filter>Q7</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q7\Matome7.cpp">
+      <Filter>Q7</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q7\Player.cpp">
+      <Filter>Q7</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q8\BaseNum.cpp">
+      <Filter>Q8</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q8\DoubleNum.cpp">
+      <Filter>Q8</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q8\Matome8.cpp">
+      <Filter>Q8</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q9\ClassC1.cpp">
+      <Filter>Q9</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q9\ClassC2.cpp">
+      <Filter>Q9</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q9\ClassP.cpp">
+      <Filter>Q9</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q9\Matome9.cpp">
+      <Filter>Q9</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q3\Matome3.cpp">
+      <Filter>Q3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q3\Day.cpp">
+      <Filter>Q3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q10\GoldPointCard.cpp">
+      <Filter>Q10</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q10\Matome10.cpp">
+      <Filter>Q10</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q10\PointCardBase.cpp">
+      <Filter>Q10</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Q10\SilverPointCard.cpp">
+      <Filter>Q10</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Q1\IchimatsuMark.h">
+      <Filter>Q1</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q2\Num.h">
+      <Filter>Q2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q4\Character.h">
+      <Filter>Q4</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q5\Rand2Num.h">
+      <Filter>Q5</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q6\BaseNum.h">
+      <Filter>Q6</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q6\InputNum.h">
+      <Filter>Q6</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q6\RandomNum.h">
+      <Filter>Q6</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q7\Base.h">
+      <Filter>Q7</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q7\Enemy.h">
+      <Filter>Q7</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q7\Player.h">
+      <Filter>Q7</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q8\BaseNum.h">
+      <Filter>Q8</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q8\DoubleNum.h">
+      <Filter>Q8</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q9\ClassC1.h">
+      <Filter>Q9</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q9\ClassC2.h">
+      <Filter>Q9</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q9\ClassP.h">
+      <Filter>Q9</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q3\Day.h">
+      <Filter>Q3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q10\PointCardBase.h">
+      <Filter>Q10</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q10\GoldPointCard.h">
+      <Filter>Q10</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Q10\SilverPointCard.h">
+      <Filter>Q10</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
