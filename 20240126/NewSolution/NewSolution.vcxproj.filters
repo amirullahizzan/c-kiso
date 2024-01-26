@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Chapter06_08">
+      <UniqueIdentifier>{4b85d71a-cf78-4dd2-aa03-b76a87a0335e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Chapter07_11">
+      <UniqueIdentifier>{15863691-fd69-42c2-8dd4-025e4040b36d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PackNumber.cpp">
+      <Filter>Chapter06_08</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyConstructor1.cpp">
+      <Filter>Chapter06_08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Chapter07_11\WeaponSword.cpp">
+      <Filter>Chapter07_11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Chapter07_11\WeaponTwinSword.cpp">
+      <Filter>Chapter07_11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Chapter07_11\DynamicAllocation1.cpp">
+      <Filter>Chapter07_11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Chapter07_11\WeaponBase.cpp">
+      <Filter>Chapter07_11</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PackNumber.h">
+      <Filter>Chapter06_08</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Chapter07_11\WeaponSword.h">
+      <Filter>Chapter07_11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Chapter07_11\WeaponTwinSword.h">
+      <Filter>Chapter07_11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Chapter07_11\WeaponBase.h">
+      <Filter>Chapter07_11</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
