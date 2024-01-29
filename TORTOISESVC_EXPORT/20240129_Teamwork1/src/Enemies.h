@@ -1,0 +1,13 @@
+#pragma once
+#include "EnemyBase.h"
+#include "EnemyKanamaru.h"
+#include "Enemy04Kitagawa.h"
+#include "Enemy05Sasa.h"
+#include "Enemy06Tanaka.h"
+#include "Enemy07Hamaguchi.h"
+#include "Enemy08Fujii.h"
+#include "Enemy09Mai.h"
+#include "Enemy11Mishima.h"
+#include "Enemy12Yukioka.h"
+#include "Enemy01Izzan.h"
+#include "Enemy02Etoh.h"

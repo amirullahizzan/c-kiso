@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\System">
+      <UniqueIdentifier>{aa4e8e32-1ee4-4421-96b5-f9f956de043d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\System">
+      <UniqueIdentifier>{dd2451c7-64a6-4f84-972b-85af8d77dcfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\System\Input">
+      <UniqueIdentifier>{85c753b8-a7d5-46b0-b11e-df9a59f68695}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System\Input">
+      <UniqueIdentifier>{9c0e25a7-7e7e-4b89-b742-012b54fb0dc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game">
+      <UniqueIdentifier>{3968243e-b5ab-4bd6-9315-ecf7d215203b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game">
+      <UniqueIdentifier>{eca0082e-3e81-4380-b2c6-059ea0cf6d95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System\Image">
+      <UniqueIdentifier>{6790dab2-b15a-4fc1-97a3-186b665c4685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\System\Image">
+      <UniqueIdentifier>{9e2ee533-c080-48b3-b7c2-b3870817ad4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene">
+      <UniqueIdentifier>{16407a5c-dbdc-4c0b-bd27-ee135c516592}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\Scene">
+      <UniqueIdentifier>{a0789c25-11d6-4799-b79e-5caf86af5306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Base">
+      <UniqueIdentifier>{0d78cf7b-bfb4-45d5-af3b-aff2281aaada}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\Scene\Base">
+      <UniqueIdentifier>{12f45d75-71c0-447d-b231-84aa9a478f36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Actor">
+      <UniqueIdentifier>{5eae3b98-6cd6-42e4-9a48-64242e316813}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\Actor">
+      <UniqueIdentifier>{f59970f6-8cd8-41cb-9b94-7b6b22172dfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\Actor\Base">
+      <UniqueIdentifier>{6e59eede-45a2-4f5b-8059-51a4482bba00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Actor\Base">
+      <UniqueIdentifier>{5c376b3f-87ec-4e2c-87ec-93d10ac59627}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Actor\Enemy">
+      <UniqueIdentifier>{d7b6e1b6-3355-428d-9f58-a1696024bc29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Actor\Enemy\Base">
+      <UniqueIdentifier>{ddbf7c94-c49b-4c55-9736-6eceee728d22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\Actor\Enemy">
+      <UniqueIdentifier>{7c6cec92-0996-4369-910c-fea3340b2ace}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\Actor\Enemy\Base">
+      <UniqueIdentifier>{b91af65a-b8b8-4e7c-b69b-0ae9dd81ab3e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\InputPad.h">
+      <Filter>ヘッダー ファイル\System\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InputMouse.h">
+      <Filter>ヘッダー ファイル\System\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InputKey.h">
+      <Filter>ヘッダー ファイル\System\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WinMain.h">
+      <Filter>ヘッダー ファイル\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameMain.h">
+      <Filter>ヘッダー ファイル\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AnimationImage.h">
+      <Filter>ヘッダー ファイル\System\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneTitle.h">
+      <Filter>ヘッダー ファイル\Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneBase.h">
+      <Filter>ヘッダー ファイル\Game\Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Common.h">
+      <Filter>ヘッダー ファイル\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneCredit.h">
+      <Filter>ヘッダー ファイル\Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneGameMain.h">
+      <Filter>ヘッダー ファイル\Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActorBase.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Player.h">
+      <Filter>ヘッダー ファイル\Game\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EnemyBase.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EnemyKanamaru.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemies.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EnemyManager.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hit.h">
+      <Filter>ヘッダー ファイル\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FontManager.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy01Izzan.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy02Etoh.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy04Kitagawa.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy05Sasa.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy06Tanaka.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy07Hamaguchi.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy08Fujii.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy09Mai.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy12Yukioka.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy11Mishima.h">
+      <Filter>ヘッダー ファイル\Game\Actor\Enemy</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\InputKey.cpp">
+      <Filter>ソース ファイル\System\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InputMouse.cpp">
+      <Filter>ソース ファイル\System\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InputPad.cpp">
+      <Filter>ソース ファイル\System\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameMain.cpp">
+      <Filter>ソース ファイル\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WinMain.cpp">
+      <Filter>ソース ファイル\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AnimationImage.cpp">
+      <Filter>ソース ファイル\System\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SceneTitle.cpp">
+      <Filter>ソース ファイル\Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SceneBase.cpp">
+      <Filter>ソース ファイル\Game\Scene\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SceneCredit.cpp">
+      <Filter>ソース ファイル\Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SceneGameMain.cpp">
+      <Filter>ソース ファイル\Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActorBase.cpp">
+      <Filter>ソース ファイル\Game\Actor\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Player.cpp">
+      <Filter>ソース ファイル\Game\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EnemyBase.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EnemyKanamaru.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EnemyManager.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hit.cpp">
+      <Filter>ソース ファイル\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FontManager.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemy01Izzan.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemy02Etoh.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemy04Kitagawa.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemy05Sasa.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemy06Tanaka.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemy07Hamaguchi.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemy08Fujii.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemy09Mai.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemy12Yukioka.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemy11Mishima.cpp">
+      <Filter>ソース ファイル\Game\Actor\Enemy</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
